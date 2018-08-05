@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>ut_executable · utPLSQL Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# UT_EXECUTABLE"/><meta name="docsearch:version" content="1.0.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="ut_executable · utPLSQL Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://utplsql.org/index.html"/><meta property="og:description" content="# UT_EXECUTABLE"/><meta property="og:image" content="https://utplsql.org/img/utplsq.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://utplsql.org/img/utplsq.png"/><link rel="shortcut icon" href="/img/utplsq.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/utplsq.svg" alt="utPLSQL Documentation"/><h2 class="headerTitleWithLogo">utPLSQL Documentation</h2></a><a href="/versions.html"><h3>1.0.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/README.html" target="_self">Index</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">ut_executable</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="ut-executable"></a><a href="#ut-executable" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UT_EXECUTABLE</h1>
+<ul>
+<li><p><a href="#variables">Variables</a></p></li>
+<li><p><a href="#exceptions">Exceptions</a></p></li>
+<li><p><a href="#ut_executable">UT_EXECUTABLE Function</a></p></li>
+<li><p><a href="#is_invalid">IS_INVALID Function</a></p></li>
+<li><p><a href="#do_execute">DO_EXECUTE Function</a></p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="variables-a-name-variables-a"></a><a href="#variables-a-name-variables-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Variables<a name="variables"></a></h2>
+<table>
+<thead>
+<tr><th>Name</th><th>Code</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>begin</td><td><pre>begin<br />  dbms_sql.parse(l_cursor_number, statement =&gt; l_statement, language_flag =&gt; dbms_sql.native);</pre></td></tr>
+<tr><td><pre>  l_status := dbms_sql.execute(l_cursor_number);</pre></td></tr>
+<tr><td>end</td><td><pre>    end if;</pre></td></tr>
+<tr><td><pre>l_completed_without_errors := (self.error_stack</td><td></td><td>self.error_backtrace) is null;</pre></td></tr>
+<tr><td>end</td><td><pre>end if;</pre></td></tr>
+<tr><td>end</td><td><pre>    end if;</pre></td></tr>
+<tr><td><pre>    l_end_transaction_id := dbms_transaction.local_transaction_id();</pre></td></tr>
+<tr><td>end</td><td><pre>    end if;</pre></td></tr>
+<tr><td>return</td><td><pre>    return l_completed_without_errors;</pre></td></tr>
+<tr><td>end</td><td><pre>    <br />  end do_execute;</pre></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="exceptions-a-name-exceptions-a"></a><a href="#exceptions-a-name-exceptions-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exceptions<a name="exceptions"></a></h2>
+<table>
+<thead>
+<tr><th>Name</th><th>Code</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>begin</td><td><pre>begin<br />  dbms_sql.parse(l_cursor_number, statement =&gt; l_statement, language_flag =&gt; dbms_sql.native);</pre></td></tr>
+<tr><td><pre>  l_status := dbms_sql.execute(l_cursor_number);</pre></td></tr>
+<tr><td>end</td><td><pre>    end if;</pre></td></tr>
+<tr><td><pre>l_completed_without_errors := (self.error_stack</td><td></td><td>self.error_backtrace) is null;</pre></td></tr>
+<tr><td>end</td><td><pre>end if;</pre></td></tr>
+<tr><td>end</td><td><pre>    end if;</pre></td></tr>
+<tr><td><pre>    l_end_transaction_id := dbms_transaction.local_transaction_id();</pre></td></tr>
+<tr><td>end</td><td><pre>    end if;</pre></td></tr>
+<tr><td>return</td><td><pre>    return l_completed_without_errors;</pre></td></tr>
+<tr><td>end</td><td><pre>    <br />  end do_execute;</pre></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="ut-executable-function-a-name-ut-executable-a"></a><a href="#ut-executable-function-a-name-ut-executable-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UT_EXECUTABLE Function<a name="ut_executable"></a></h2>
+<p>
+<p>utPLSQL - Version 3<br />  Copyright 2016 - 2017 utPLSQL Project</p><p>  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;):<br />  you may not use this file except in compliance with the License.<br />  You may obtain a copy of the License at</p><pre><code class="hljs">  http://www.apache.org/licenses/LICENSE-2.0</code></pre><p>  Unless required by applicable law or agreed to in writing, software<br />  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,<br />  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<br />  See the License for the specific language governing permissions and<br />  limitations under the License.</p>
+</p>
+<h3><a class="anchor" aria-hidden="true" id="syntax"></a><a href="#syntax" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h3>
+<pre><code class="hljs css languages- plsql"><span class="hljs-function"><span class="hljs-keyword">constructor</span> <span class="hljs-title">function</span> <span class="hljs-title">ut_executable</span><span class="hljs-params">(
+  <span class="hljs-keyword">self</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">out</span> nocopy ut_executable, a_owner varchar2, a_package varchar2,
+  a_procedure_name varchar2, a_associated_event_name varchar2
+)</span> <span class="hljs-title">return</span> <span class="hljs-title">self</span>
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="is-invalid-function-a-name-is-invalid-a"></a><a href="#is-invalid-function-a-name-is-invalid-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IS_INVALID Function<a name="is_invalid"></a></h2>
+<p>
+<p>We will check if error raised because package was invalid if not we let it propagate.</p>
+</p>
+<h3><a class="anchor" aria-hidden="true" id="syntax-1"></a><a href="#syntax-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h3>
+<pre><code class="hljs css languages- plsql">member <span class="hljs-keyword">function</span> <span class="hljs-title">is_invalid</span>(self in out nocopy ut_executable) <span class="hljs-keyword">return</span> <span class="hljs-type">boolean</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="do-execute-function-a-name-do-execute-a"></a><a href="#do-execute-function-a-name-do-execute-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DO_EXECUTE Function<a name="do_execute"></a></h2>
+<p>
+<p>executes the defines executable<br />returns true if executed without exceptions<br />returns false if exceptions were raised</p>
+</p>
+<h3><a class="anchor" aria-hidden="true" id="syntax-2"></a><a href="#syntax-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h3>
+<pre><code class="hljs css languages- plsql">member <span class="hljs-keyword">function</span> <span class="hljs-title">do_execute</span>(self in out nocopy ut_executable, a_item in out nocopy ut_suite_item) <span class="hljs-keyword">return</span> <span class="hljs-type">boolean,</span>
+member <span class="hljs-keyword">function</span> <span class="hljs-title">get_error_stack_trace</span> <span class="hljs-keyword">return</span> <span class="hljs-type">varchar2</span>
+) <span class="hljs-keyword">not</span> final
+/
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#variables-a-name-variables-a">Variables</a></li><li><a href="#exceptions-a-name-exceptions-a">Exceptions</a></li><li><a href="#ut-executable-function-a-name-ut-executable-a">UT_EXECUTABLE Function</a><ul class="toc-headings"><li><a href="#syntax">Syntax</a></li></ul></li><li><a href="#is-invalid-function-a-name-is-invalid-a">IS_INVALID Function</a><ul class="toc-headings"><li><a href="#syntax-1">Syntax</a></li></ul></li><li><a href="#do-execute-function-a-name-do-execute-a">DO_EXECUTE Function</a><ul class="toc-headings"><li><a href="#syntax-2">Syntax</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/utplsq.svg" alt="utPLSQL Documentation" width="66" height="29"/></a><div><a href="/docs/en/http://utplsql.org">utPLSQL official website</a></div><div><a href="/en/http://utplsql.org/contributing/">Contributing</a><a href="https://utplsql.slack.com">Project Chat</a></div><div><a href="https://github.com/">GitHub</a></div></section><section class="copyright">Copyright © 2018 Your Name or Your Company Name</section></footer></div></body></html>

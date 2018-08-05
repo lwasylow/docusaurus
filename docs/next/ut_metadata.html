@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>ut_metadata · utPLSQL Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# UT_METADATA"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="ut_metadata · utPLSQL Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://utplsql.org/index.html"/><meta property="og:description" content="# UT_METADATA"/><meta property="og:image" content="https://utplsql.org/img/utplsq.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://utplsql.org/img/utplsq.png"/><link rel="shortcut icon" href="/img/utplsq.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/utplsq.svg" alt="utPLSQL Documentation"/><h2 class="headerTitleWithLogo">utPLSQL Documentation</h2></a><a href="/versions.html"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/next/README.html" target="_self">Index</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">ut_metadata</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="ut-metadata"></a><a href="#ut-metadata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UT_METADATA</h1>
+<ul>
+<li><a href="#types">Data Types</a></li>
+</ul>
+<ul>
+<li><p><a href="#variables">Variables</a></p></li>
+<li><p><a href="#exceptions">Exceptions</a></p></li>
+<li><p><a href="#form_name">FORM_NAME Function</a></p></li>
+<li><p><a href="#package_valid">PACKAGE_VALID Function</a></p></li>
+<li><p><a href="#procedure_exists">PROCEDURE_EXISTS Function</a></p></li>
+<li><p><a href="#do_resolve">DO_RESOLVE Procedure</a></p></li>
+<li><p><a href="#do_resolve-1">DO_RESOLVE-1 Procedure</a></p></li>
+<li><p><a href="#get_source_definition_line">GET_SOURCE_DEFINITION_LINE Function</a></p></li>
+<li><p><a href="#reset_source_definition_cache">RESET_SOURCE_DEFINITION_CACHE Procedure</a></p></li>
+<li><p><a href="#get_dba_view">GET_DBA_VIEW Function</a></p></li>
+<li><p><a href="#package_exists_in_cur_schema">PACKAGE_EXISTS_IN_CUR_SCHEMA Function</a></p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="types-a-name-types-a"></a><a href="#types-a-name-types-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Types<a name="types"></a></h2>
+<table>
+<thead>
+<tr><th>Name</th><th>Code</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>t_cache</td><td><pre>type t_cache is table of all_source.text%type;</pre></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="variables-a-name-variables-a"></a><a href="#variables-a-name-variables-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Variables<a name="variables"></a></h2>
+<table>
+<thead>
+<tr><th>Name</th><th>Code</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>end</td><td><pre>    end if;</pre></td></tr>
+<tr><td>end</td><td><pre>    end if;</pre></td></tr>
+<tr><td>return</td><td><pre>    return l_line;</pre></td></tr>
+<tr><td><pre>    g_cached_object := null;</pre></td></tr>
+<tr><td>l_result</td><td><pre>    l_result              varchar2(128) := lower(a_dba_view_name);</pre></td></tr>
+<tr><td>pragma</td><td><pre>    pragma exception_init(l_invalid_object_name,-44002);</pre></td></tr>
+<tr><td>begin</td><td><pre>  begin<br />    l_result := dbms_assert.sql_object_name(l_result);</pre></td></tr>
+<tr><td>return</td><td><pre>    return l_result;</pre></td></tr>
+<tr><td>c_current_schema</td><td><pre>    c_current_schema constant all_tables.owner%type := sys_context('USERENV','CURRENT_SCHEMA');</pre></td></tr>
+<tr><td>return</td><td><pre>    return l_cnt &gt; 0;</pre></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="exceptions-a-name-exceptions-a"></a><a href="#exceptions-a-name-exceptions-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exceptions<a name="exceptions"></a></h2>
+<table>
+<thead>
+<tr><th>Name</th><th>Code</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>end</td><td><pre>    end if;</pre></td></tr>
+<tr><td>end</td><td><pre>    end if;</pre></td></tr>
+<tr><td>return</td><td><pre>    return l_line;</pre></td></tr>
+<tr><td><pre>    g_cached_object := null;</pre></td></tr>
+<tr><td>l_result</td><td><pre>    l_result              varchar2(128) := lower(a_dba_view_name);</pre></td></tr>
+<tr><td>pragma</td><td><pre>    pragma exception_init(l_invalid_object_name,-44002);</pre></td></tr>
+<tr><td>begin</td><td><pre>  begin<br />    l_result := dbms_assert.sql_object_name(l_result);</pre></td></tr>
+<tr><td>return</td><td><pre>    return l_result;</pre></td></tr>
+<tr><td>c_current_schema</td><td><pre>    c_current_schema constant all_tables.owner%type := sys_context('USERENV','CURRENT_SCHEMA');</pre></td></tr>
+<tr><td>return</td><td><pre>    return l_cnt &gt; 0;</pre></td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="form-name-function-a-name-form-name-a"></a><a href="#form-name-function-a-name-form-name-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FORM_NAME Function<a name="form_name"></a></h2>
+<p>
+<p>Forms correct object/subprogram name to call as owner.object[.subprogram]</p>
+</p>
+<h3><a class="anchor" aria-hidden="true" id="syntax"></a><a href="#syntax" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h3>
+<pre><code class="hljs css languages- plsql">function form_name(a_owner_name varchar2, a_object varchar2, a_subprogram varchar2<span class="hljs-built_in"> default </span><span class="hljs-literal">null</span>) return varchar2
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="package-valid-function-a-name-package-valid-a"></a><a href="#package-valid-function-a-name-package-valid-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PACKAGE_VALID Function<a name="package_valid"></a></h2>
+<p>
+<p>Check if package exists and is in a VALID state</p>
+</p>
+<h3><a class="anchor" aria-hidden="true" id="syntax-1"></a><a href="#syntax-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h3>
+<pre><code class="hljs css languages- plsql"><span class="hljs-keyword">function</span> <span class="hljs-title">package_valid</span>(a_owner_name varchar2, a_package_name in varchar2) <span class="hljs-keyword">return</span> <span class="hljs-type">boolean</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="procedure-exists-function-a-name-procedure-exists-a"></a><a href="#procedure-exists-function-a-name-procedure-exists-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PROCEDURE_EXISTS Function<a name="procedure_exists"></a></h2>
+<p>
+<p>Check if package exists and is VALID and contains the given procedure.</p>
+</p>
+<h3><a class="anchor" aria-hidden="true" id="syntax-2"></a><a href="#syntax-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h3>
+<pre><code class="hljs css languages- plsql"><span class="hljs-keyword">function</span> <span class="hljs-title">procedure_exists</span>(a_owner_name varchar2, a_package_name in varchar2, a_procedure_name in varchar2)
+  <span class="hljs-keyword">return</span> <span class="hljs-type">boolean</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="do-resolve-procedure-a-name-do-resolve-a"></a><a href="#do-resolve-procedure-a-name-do-resolve-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DO_RESOLVE Procedure<a name="do_resolve"></a></h2>
+<p>
+<p>Resolves [owner.]object using dbms_utility.name_resolve and returns resolved parts</p>
+</p>
+<h3><a class="anchor" aria-hidden="true" id="syntax-3"></a><a href="#syntax-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h3>
+<pre><code class="hljs css languages- plsql"><span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">do_resolve</span><span class="hljs-params">(a_owner <span class="hljs-keyword">in</span> <span class="hljs-keyword">out</span> nocopy varchar2, a_object <span class="hljs-keyword">in</span> <span class="hljs-keyword">out</span> nocopy varchar2)</span>
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="do-resolve-1-procedure-a-name-do-resolve-1-a"></a><a href="#do-resolve-1-procedure-a-name-do-resolve-1-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DO_RESOLVE-1 Procedure<a name="do_resolve-1"></a></h2>
+<p>
+<p>Resolves [owner.]object[.procedure] using dbms_utility.name_resolve and returns resolved parts</p>
+</p>
+<h3><a class="anchor" aria-hidden="true" id="syntax-4"></a><a href="#syntax-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h3>
+<pre><code class="hljs css languages- plsql"><span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">do_resolve</span><span class="hljs-params">(a_owner <span class="hljs-keyword">in</span> <span class="hljs-keyword">out</span> nocopy varchar2, a_object <span class="hljs-keyword">in</span> <span class="hljs-keyword">out</span> nocopy varchar2, a_procedure_name <span class="hljs-keyword">in</span> <span class="hljs-keyword">out</span> nocopy varchar2)</span>
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="get-source-definition-line-function-a-name-get-source-definition-line-a"></a><a href="#get-source-definition-line-function-a-name-get-source-definition-line-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GET_SOURCE_DEFINITION_LINE Function<a name="get_source_definition_line"></a></h2>
+<p>
+<p>Return the text of the source line for a given object (body). It excludes package spec and type spec</p>
+</p>
+<h3><a class="anchor" aria-hidden="true" id="syntax-5"></a><a href="#syntax-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h3>
+<pre><code class="hljs css languages- plsql"><span class="hljs-keyword">function</span> <span class="hljs-title">get_source_definition_line</span>(a_owner varchar2, a_object_name varchar2, a_line_no integer) <span class="hljs-keyword">return</span> <span class="hljs-type">varchar2</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="reset-source-definition-cache-procedure-a-name-reset-source-definition-cache-a"></a><a href="#reset-source-definition-cache-procedure-a-name-reset-source-definition-cache-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RESET_SOURCE_DEFINITION_CACHE Procedure<a name="reset_source_definition_cache"></a></h2>
+<p>
+<p>Invalidates package-level cache for source.<br />Caching is used to improve performance of function get_source_definition_line</p>
+</p>
+<h3><a class="anchor" aria-hidden="true" id="syntax-6"></a><a href="#syntax-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h3>
+<pre><code class="hljs css languages- plsql"><span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">reset_source_definition_cache</span>
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="get-dba-view-function-a-name-get-dba-view-a"></a><a href="#get-dba-view-function-a-name-get-dba-view-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GET_DBA_VIEW Function<a name="get_dba_view"></a></h2>
+<p>
+<p>Returns dba_... view name if it is accessible, otherwise it returns all_xxx view</p>
+</p>
+<h3><a class="anchor" aria-hidden="true" id="syntax-7"></a><a href="#syntax-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h3>
+<pre><code class="hljs css languages- plsql"><span class="hljs-keyword">function</span> <span class="hljs-title">get_dba_view</span>(a_dba_view_name varchar2) <span class="hljs-keyword">return</span> <span class="hljs-type">varchar2</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="parameters"></a><a href="#parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h3>
+<table>
+<thead>
+<tr><th>Name</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>a_dba_view_name</code></td><td>the name of dba view requested</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="package-exists-in-cur-schema-function-a-name-package-exists-in-cur-schema-a"></a><a href="#package-exists-in-cur-schema-function-a-name-package-exists-in-cur-schema-a" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PACKAGE_EXISTS_IN_CUR_SCHEMA Function<a name="package_exists_in_cur_schema"></a></h2>
+<p>
+<p>Returns true if given object is a package and it exists in current schema</p>
+</p>
+<h3><a class="anchor" aria-hidden="true" id="syntax-8"></a><a href="#syntax-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h3>
+<pre><code class="hljs css languages- plsql"><span class="hljs-keyword">function</span> <span class="hljs-keyword">package</span><span class="hljs-number">_</span><span class="hljs-keyword">exists</span><span class="hljs-number">_</span><span class="hljs-keyword">in</span><span class="hljs-number">_</span>cur<span class="hljs-number">_</span>schema(a<span class="hljs-number">_</span><span class="hljs-keyword">object</span><span class="hljs-number">_n</span>ame varchar<span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> boolean
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="parameters-1"></a><a href="#parameters-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h3>
+<table>
+<thead>
+<tr><th>Name</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>a_object_name</code></td><td>the name of the object to be checked</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#types-a-name-types-a">Types</a></li><li><a href="#variables-a-name-variables-a">Variables</a></li><li><a href="#exceptions-a-name-exceptions-a">Exceptions</a></li><li><a href="#form-name-function-a-name-form-name-a">FORM_NAME Function</a><ul class="toc-headings"><li><a href="#syntax">Syntax</a></li></ul></li><li><a href="#package-valid-function-a-name-package-valid-a">PACKAGE_VALID Function</a><ul class="toc-headings"><li><a href="#syntax-1">Syntax</a></li></ul></li><li><a href="#procedure-exists-function-a-name-procedure-exists-a">PROCEDURE_EXISTS Function</a><ul class="toc-headings"><li><a href="#syntax-2">Syntax</a></li></ul></li><li><a href="#do-resolve-procedure-a-name-do-resolve-a">DO_RESOLVE Procedure</a><ul class="toc-headings"><li><a href="#syntax-3">Syntax</a></li></ul></li><li><a href="#do-resolve-1-procedure-a-name-do-resolve-1-a">DO_RESOLVE-1 Procedure</a><ul class="toc-headings"><li><a href="#syntax-4">Syntax</a></li></ul></li><li><a href="#get-source-definition-line-function-a-name-get-source-definition-line-a">GET_SOURCE_DEFINITION_LINE Function</a><ul class="toc-headings"><li><a href="#syntax-5">Syntax</a></li></ul></li><li><a href="#reset-source-definition-cache-procedure-a-name-reset-source-definition-cache-a">RESET_SOURCE_DEFINITION_CACHE Procedure</a><ul class="toc-headings"><li><a href="#syntax-6">Syntax</a></li></ul></li><li><a href="#get-dba-view-function-a-name-get-dba-view-a">GET_DBA_VIEW Function</a><ul class="toc-headings"><li><a href="#syntax-7">Syntax</a></li><li><a href="#parameters">Parameters</a></li></ul></li><li><a href="#package-exists-in-cur-schema-function-a-name-package-exists-in-cur-schema-a">PACKAGE_EXISTS_IN_CUR_SCHEMA Function</a><ul class="toc-headings"><li><a href="#syntax-8">Syntax</a></li><li><a href="#parameters-1">Parameters</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/utplsq.svg" alt="utPLSQL Documentation" width="66" height="29"/></a><div><a href="/docs/en/http://utplsql.org">utPLSQL official website</a></div><div><a href="/en/http://utplsql.org/contributing/">Contributing</a><a href="https://utplsql.slack.com">Project Chat</a></div><div><a href="https://github.com/">GitHub</a></div></section><section class="copyright">Copyright © 2018 Your Name or Your Company Name</section></footer></div></body></html>
