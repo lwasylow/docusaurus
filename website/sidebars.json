@@ -1,5 +1,5 @@
 {
-"docs" : {
+"docusaurus/docs" : {
   "README" : ["README.md"],
   "ut" : ["ut.md"],
   "ut_annotated_object" : ["ut_annotated_object.md"],

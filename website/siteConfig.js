@@ -24,7 +24,7 @@ const siteConfig = {
   title: 'utPLSQL Documentation' /* title for your website */,
   tagline: 'Documentation',
   url: 'https://utplsql.org' /* your website url */,
-  baseUrl: '/' /* base url for your project */,
+  baseUrl: 'docusaurus' /* base url for your project */,
   // Used for publishing and more
   projectName: 'docusaurus',
   organizationName: 'lwasylow',
