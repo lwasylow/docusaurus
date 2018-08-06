@@ -23,8 +23,8 @@ const users = [
 const siteConfig = {
   title: 'utPLSQL Documentation' /* title for your website */,
   tagline: 'Documentation',
-  url: 'https://utplsql.org' /* your website url */,
-  baseUrl: '/pages/lwasylow/docusaurus/' /* base url for your project */,
+  url: 'https://lwasylow.github.io' /* your website url */,
+  baseUrl: '/docusaurus/' /* base url for your project */,
   // Used for publishing and more
   projectName: 'docusaurus',
   organizationName: 'lwasylow',
